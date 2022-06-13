@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-h2 {
+h1, h2 {
   text-align: center;
 }
 
@@ -26,4 +26,45 @@ footer {
   text-align: center;
   font-style: italic;
 }
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  background-color: darkgrey;
+}
+
+header > div {
+  width: 400px;
+  display: flex;
+  justify-content:space-around;
+}
+
+a {
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 700;
+  cursor: pointer;
+  color: blueviolet;
+}
+
+/* a:visited {
+  color: blueviolet;
+} */
+
+
+
+/* a:hover, a:focus {
+  color: violet;
+} */
+
+.active {
+  color: red;
+}
+
+.active-link {
+  color: chartreuse;
+}
+
 
