@@ -22,4 +22,8 @@ h2 + p {
   margin-left: auto;
 }
 
+footer {
+  text-align: center;
+  font-style: italic;
+}
 
