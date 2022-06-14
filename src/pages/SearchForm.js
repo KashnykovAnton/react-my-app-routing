@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const SearchForm = ({ onSubmit }) => {
   const [query, setQuery] = useState('');
+  console.log(useLocation());
 
   const handleChange = e => {
     setQuery(e.currentTarget.value);

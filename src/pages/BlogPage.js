@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 // import SearchForm from './SearchForm';
 
 function BlogPage() {
   const [posts, setPosts] = useState([]);
-  console.log(posts);
+  console.log(useLocation());
 
   useEffect(() => {
     fetch('https://pokeapi.co/api/v2/pokemon')
