@@ -22,11 +22,13 @@ const SinglePage = () => {
 
   return (
     <div>
-      <button onClick={goBack}>Go back</button>
-      <button onClick={goBackTwoSteps}>Go back Two Steps</button>
-      {/* Not Recommended! Bad approach. Better to use Link for simple go to home */}
-      <button onClick={goHome}>Go Home</button>
-      <button onClick={goBackWithState}>Go Back With State</button>
+      <div className="buttons-block">
+        <button onClick={goBack}>Go back</button>
+        <button onClick={goBackTwoSteps}>Go back Two Steps</button>
+        {/* Not Recommended! Bad approach. Better to use Link for simple go to home */}
+        <button onClick={goHome}>Go Home</button>
+        <button onClick={goBackWithState}>Go Back With State</button>
+      </div>
 
       {pokemon && (
         <>

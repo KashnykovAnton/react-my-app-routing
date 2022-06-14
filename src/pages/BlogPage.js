@@ -10,11 +10,16 @@ function BlogPage() {
     fetch('https://pokeapi.co/api/v2/pokemon')
       .then(r => r.json())
       .then(data => setPosts(data.results));
+    // fetch('https://jsonplaceholder.typicode.com/posts/')
+    //   .then(r => r.json())
+    //   .then(data => {
+    //     console.log(data);
+    //   });
   }, []);
 
   return (
     <>
-      <h2>Blog page</h2>
+      <h1>Blog page</h1>
       <ul>
         {posts.map(post => {
           const arr = post.url.split('/');

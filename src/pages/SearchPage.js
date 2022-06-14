@@ -30,7 +30,7 @@ function SearchPage() {
 
   return (
     <>
-      <h2>Search page</h2>
+      <h1>Search page</h1>
       <SearchForm onSubmit={onChangeQuery} />
       <ul>
         {!isEmpty && (

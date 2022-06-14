@@ -11,6 +11,7 @@ function Layout() {
       </header>
 
       <Outlet />
+
       <footer>2022</footer>
     </>
   );

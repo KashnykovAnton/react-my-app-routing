@@ -1,7 +1,7 @@
 function HomePage() {
   return (
     <>
-      <h2>Home page</h2>
+      <h1>Home page</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque illo
         ullam perferendis aliquid ipsum dolorem, aliquam itaque doloribus aut
