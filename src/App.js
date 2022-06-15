@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import HomePage from 'pages/HomePage';
 import AboutPage from 'pages/AboutPage';
 import BlogPage from 'pages/BlogPage';
+import BlogPostsPage from 'pages/BlogPostsPage';
 import NotFoundPage from 'pages/NotFoundPage';
 import Layout from 'components/Layout';
 import SinglePage from 'pages/SinglePage';
@@ -21,6 +22,7 @@ function App() {
           <Route path="about" element={<AboutPage />} />
           <Route path="about-us" element={<Navigate to="/about" replace />} />
           <Route path="posts" element={<BlogPage />} />
+          <Route path="blog-posts" element={<BlogPostsPage />} />
           <Route path="posts/:id" element={<SinglePage />} />
           <Route path="posts/:id/edit" element={<EditPost />} />
           <Route

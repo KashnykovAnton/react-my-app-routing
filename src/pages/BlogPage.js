@@ -10,11 +10,6 @@ function BlogPage() {
     fetch('https://pokeapi.co/api/v2/pokemon')
       .then(r => r.json())
       .then(data => setPosts(data.results));
-    // fetch('https://jsonplaceholder.typicode.com/posts/')
-    //   .then(r => r.json())
-    //   .then(data => {
-    //     console.log(data);
-    //   });
   }, []);
 
   return (

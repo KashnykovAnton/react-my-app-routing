@@ -120,3 +120,11 @@ a {
   transform: scaleX(1.1);
   opacity: 1;
 }
+
+label {
+  padding: 10px;
+}
+
+input {
+  margin: 0 10px;
+}
