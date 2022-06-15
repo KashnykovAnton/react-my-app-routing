@@ -4,7 +4,11 @@ import { Link, useLocation } from 'react-router-dom';
 
 function BlogPage() {
   const [posts, setPosts] = useState([]);
-  console.log(useLocation());
+  const location = useLocation();
+  // console.log('location in posts ', location);
+
+  const searchFromLocation = location.state ? location.state : '';
+  // console.log(searchFromLocation);
 
   useEffect(() => {
     fetch('https://pokeapi.co/api/v2/pokemon')
@@ -26,9 +30,17 @@ function BlogPage() {
           );
         })}
       </ul>
-      <Link to="/posts/new" style={{ color: 'darkgreen' }}>
-        Create New Post
-      </Link>
+      <div className="links-block">
+        <Link to="/posts/new" style={{ color: 'darkgreen' }}>
+          Create New Post
+        </Link>
+        <Link to="/find" style={{ color: 'darkviolet' }}>
+          Find pokemon
+        </Link>
+        <Link to={`/find${searchFromLocation}`} style={{ color: 'darkred' }}>
+          Go to previous search
+        </Link>
+      </div>
     </>
   );
 }

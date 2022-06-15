@@ -3,6 +3,7 @@ import HomePage from 'pages/HomePage';
 import AboutPage from 'pages/AboutPage';
 import BlogPage from 'pages/BlogPage';
 import BlogPostsPage from 'pages/BlogPostsPage';
+import BlogPostsSinglePage from 'pages/BlogPostsSinglePage';
 import NotFoundPage from 'pages/NotFoundPage';
 import Layout from 'components/Layout';
 import SinglePage from 'pages/SinglePage';
@@ -25,7 +26,6 @@ function App() {
           </Route>
           <Route path="about-us" element={<Navigate to="/about" replace />} />
           <Route path="posts" element={<BlogPage />} />
-          <Route path="blog-posts" element={<BlogPostsPage />} />
           <Route path="posts/:id" element={<SinglePage />} />
           <Route path="posts/:id/edit" element={<EditPost />} />
           <Route
@@ -36,6 +36,8 @@ function App() {
               </RequireAuth>
             }
           />
+          <Route path="blog-posts" element={<BlogPostsPage />} />
+          <Route path="blog-posts/:id" element={<BlogPostsSinglePage />} />
           <Route path="find" element={<SearchPage />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="*" element={<NotFoundPage />} />

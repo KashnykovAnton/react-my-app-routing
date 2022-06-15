@@ -5,7 +5,7 @@ const SinglePage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [pokemon, setPokemon] = useState('');
-  console.log(pokemon);
+  // console.log(pokemon);
 
   const goBack = () => navigate(-1);
   const goBackTwoSteps = () => navigate(-2);

@@ -1,17 +1,24 @@
 import { useState, useEffect } from 'react';
-import { useLocation, useSearchParams } from 'react-router-dom';
+import { useSearchParams, useNavigate, useLocation } from 'react-router-dom';
 
 const SearchForm = ({ onSubmit }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get('pokemon') || '';
   const [query, setQuery] = useState(searchQuery);
-  // console.log(useLocation());
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // console.log('location in search ', location);
+
+  const goBackToPosts = () => navigate('/posts', { replace: true });
+  const goBackWithState = () => navigate('/posts', { state: location.search });
 
   useEffect(() => {
     if (!searchQuery) {
       return;
     }
     onSubmit(query);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleChange = e => {
@@ -20,26 +27,31 @@ const SearchForm = ({ onSubmit }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    onSubmit(query.trim().toLowerCase());
+    const formQuery = query.trim().toLowerCase();
+    onSubmit(formQuery);
     const params = {};
-    console.log(query.trim() !== '');
 
-    if (query.length && query.trim() !== '') {
-      params.pokemon = query.trim().toLowerCase();
-      console.log('inside');
+    if (formQuery.length) {
+      params.pokemon = formQuery;
       setSearchParams(params);
     }
 
-    console.log(params);
     setSearchParams(params);
     setQuery('');
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" value={query} onChange={handleChange} />
-      <button type="submit">Search</button>
-    </form>
+    <>
+      <div className="buttons-block">
+        <button onClick={goBackToPosts}>Go back To Posts</button>
+        <button onClick={goBackWithState}>Go Back With State</button>
+      </div>
+
+      <form onSubmit={handleSubmit}>
+        <input type="text" value={query} onChange={handleChange} />
+        <button type="submit">Search</button>
+      </form>
+    </>
   );
 };
 

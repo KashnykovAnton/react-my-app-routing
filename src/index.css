@@ -133,3 +133,22 @@ input {
   display: block;
   margin-left: 20px;
 }
+
+.post-article {
+  width: 350px;
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+  background-color: lightcoral;
+  border: 3px solid red;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.post-article > p:not(:last-child) {
+  font-size: 20px;
+  font-weight: 500;
+  font-style: italic;
+  color: blueviolet;
+  
+}

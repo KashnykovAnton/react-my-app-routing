@@ -6,7 +6,7 @@ function SearchPage() {
   const [pokemon, setPokemon] = useState({});
   const [query, setQuery] = useState('');
   const locationState = useLocation();
-  // console.log(useLocation());
+  // console.log(locationState.search);
   // console.log(query);
   // console.log(pokemon);
 

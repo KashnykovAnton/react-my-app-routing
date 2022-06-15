@@ -20,7 +20,7 @@ const BlogPostsFilter = ({ postQuery, latest, setSearchParams }) => {
     }
 
     setSearchParams(params);
-    console.log(params);
+    // console.log(params);
   };
 
   return (

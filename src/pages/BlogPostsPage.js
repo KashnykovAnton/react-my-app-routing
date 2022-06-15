@@ -1,7 +1,6 @@
 import BlogPostsFilter from 'components/BlogPostsFilter';
 import { useState, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-// import SearchForm from './SearchForm';
 
 function BlogPostsPage() {
   const [posts, setPosts] = useState([]);
@@ -38,7 +37,7 @@ function BlogPostsPage() {
                 return;
               }
               return (
-                <Link key={post.id} to={`/posts/${post.id}`}>
+                <Link key={post.id} to={`/blog-posts/${post.id}`}>
                   <li>
                     <span style={{ marginRight: '15px' }}>№ {post.id}</span>
                     <span>{post.title}</span>
