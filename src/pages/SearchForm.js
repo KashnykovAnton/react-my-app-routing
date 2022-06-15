@@ -1,17 +1,37 @@
-import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useLocation, useSearchParams } from 'react-router-dom';
 
 const SearchForm = ({ onSubmit }) => {
-  const [query, setQuery] = useState('');
-  console.log(useLocation());
+  const [searchParams, setSearchParams] = useSearchParams();
+  const searchQuery = searchParams.get('pokemon') || '';
+  const [query, setQuery] = useState(searchQuery);
+  // console.log(useLocation());
+
+  useEffect(() => {
+    if (!searchQuery) {
+      return;
+    }
+    onSubmit(query);
+  }, []);
 
   const handleChange = e => {
-    setQuery(e.currentTarget.value);
+    setQuery(e.target.value);
   };
 
   const handleSubmit = e => {
     e.preventDefault();
-    onSubmit(query);
+    onSubmit(query.trim().toLowerCase());
+    const params = {};
+    console.log(query.trim() !== '');
+
+    if (query.length && query.trim() !== '') {
+      params.pokemon = query.trim().toLowerCase();
+      console.log('inside');
+      setSearchParams(params);
+    }
+
+    console.log(params);
+    setSearchParams(params);
     setQuery('');
   };
 

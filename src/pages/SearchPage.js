@@ -6,9 +6,9 @@ function SearchPage() {
   const [pokemon, setPokemon] = useState({});
   const [query, setQuery] = useState('');
   const locationState = useLocation();
-  console.log(useLocation());
-  console.log(query);
-  console.log(pokemon);
+  // console.log(useLocation());
+  // console.log(query);
+  // console.log(pokemon);
 
   useEffect(() => {
     if (!query) {
@@ -19,10 +19,18 @@ function SearchPage() {
       .then(data => {
         setPokemon(data);
         locationState.state = query;
+      })
+      .catch(error => {
+        console.log(error);
+        setPokemon({});
+        return alert('Please enter the correct search!');
       });
   }, [locationState, query]);
 
   const onChangeQuery = query => {
+    if (!query) {
+      setPokemon({});
+    }
     setQuery(query);
   };
 

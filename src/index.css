@@ -128,3 +128,8 @@ label {
 input {
   margin: 0 10px;
 }
+
+.links-block > a {
+  display: block;
+  margin-left: 20px;
+}
