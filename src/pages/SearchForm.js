@@ -43,13 +43,19 @@ const SearchForm = ({ onSubmit }) => {
   return (
     <>
       <div className="buttons-block">
-        <button onClick={goBackToPosts}>Go back To Posts</button>
-        <button onClick={goBackWithState}>Go Back With State</button>
+        <button onClick={goBackToPosts} className="button">
+          Go back To Posts
+        </button>
+        <button onClick={goBackWithState} className="button">
+          Go Back With State
+        </button>
       </div>
 
       <form onSubmit={handleSubmit}>
         <input type="text" value={query} onChange={handleChange} />
-        <button type="submit">Search</button>
+        <button type="submit" className="button">
+          Search
+        </button>
       </form>
     </>
   );

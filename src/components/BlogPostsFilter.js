@@ -24,26 +24,32 @@ const BlogPostsFilter = ({ postQuery, latest, setSearchParams }) => {
   };
 
   return (
-    <form autoComplete="off" onSubmit={handleSubmit}>
-      <label>
-        Search post
-        <input
-          type="search"
-          name="search"
-          value={search}
-          onChange={e => setSearch(e.target.value)}
-        />
-      </label>
-      <label>
-        Check last 20 posts
-        <input
-          type="checkbox"
-          name="latest"
-          checked={checked}
-          onChange={e => setChecked(e.target.checked)}
-        />
-      </label>
-      <button type="submit">Search</button>
+    <form autoComplete="off" onSubmit={handleSubmit} className="form">
+      <div>
+        <label>
+          Search post
+          <input
+            type="search"
+            name="search"
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+          />
+        </label>
+      </div>
+      <div>
+        <label>
+          Check last 10 posts
+          <input
+            type="checkbox"
+            name="latest"
+            checked={checked}
+            onChange={e => setChecked(e.target.checked)}
+          />
+        </label>
+      </div>
+      <button type="submit" className="button">
+        Search
+      </button>
     </form>
   );
 };

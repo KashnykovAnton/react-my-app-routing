@@ -21,8 +21,11 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="about" element={<AboutPage />}>
-            <Route path="contacts" element={<p>Our Contacts</p>} />
-            <Route path="team" element={<p>Our Team</p>} />
+            <Route
+              path="contacts"
+              element={<p className="about">Our Contacts</p>}
+            />
+            <Route path="team" element={<p className="about">Our Team</p>} />
           </Route>
           <Route path="about-us" element={<Navigate to="/about" replace />} />
           <Route path="posts" element={<BlogPage />} />

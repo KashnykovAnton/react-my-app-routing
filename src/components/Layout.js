@@ -4,14 +4,26 @@ function Layout() {
   return (
     <>
       <header>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/posts">Blog</NavLink>
-        <NavLink to="/blog-posts">BlogPosts</NavLink>
-        <NavLink to="/find">Search</NavLink>
-        <NavLink to="/about">About</NavLink>
+        <NavLink to="/" className={'header-link'}>
+          Home
+        </NavLink>
+        <NavLink to="/posts" className={'header-link'}>
+          Blog
+        </NavLink>
+        <NavLink to="/blog-posts" className={'header-link'}>
+          BlogPosts
+        </NavLink>
+        <NavLink to="/find" className={'header-link'}>
+          Search
+        </NavLink>
+        <NavLink to="/about" className={'header-link'}>
+          About
+        </NavLink>
       </header>
 
-      <Outlet />
+      <div className="outlet">
+        <Outlet />
+      </div>
 
       <footer>2022</footer>
     </>

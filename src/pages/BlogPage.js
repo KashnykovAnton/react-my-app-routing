@@ -19,27 +19,32 @@ function BlogPage() {
   return (
     <>
       <h1>Blog page</h1>
-      <ul>
-        {posts.map(post => {
-          const arr = post.url.split('/');
-          const id = arr[arr.length - 2];
-          return (
-            <Link key={post.name} to={`/posts/${id}`}>
-              <li>{post.name}</li>
-            </Link>
-          );
-        })}
-      </ul>
+      <dir className="content-container blog-container">
+        <ul className="list">
+          {posts
+            .filter((post, index) => index <= 9)
+            .map(post => {
+              const arr = post.url.split('/');
+              const id = arr[arr.length - 2];
+
+              return (
+                <Link
+                  key={post.name}
+                  to={`/posts/${id}`}
+                  className={'list-link'}
+                >
+                  <li>{post.name}</li>
+                  <span class="flare"></span>
+                </Link>
+              );
+            })}
+        </ul>
+        <div className="content-bg"></div>
+      </dir>
       <div className="links-block">
-        <Link to="/posts/new" style={{ color: 'darkgreen' }}>
-          Create New Post
-        </Link>
-        <Link to="/find" style={{ color: 'darkviolet' }}>
-          Find pokemon
-        </Link>
-        <Link to={`/find${searchFromLocation}`} style={{ color: 'darkred' }}>
-          Go to previous search
-        </Link>
+        <Link to="/posts/new">Create New Post</Link>
+        <Link to="/find">Find pokemon</Link>
+        <Link to={`/find${searchFromLocation}`}>Go to previous search</Link>
       </div>
     </>
   );

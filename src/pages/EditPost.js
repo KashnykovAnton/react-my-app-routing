@@ -8,10 +8,13 @@ const EditPost = () => {
 
   return (
     <>
-      <div className="buttons-block">
-        <button onClick={goBack}>Go back</button>
+      <button onClick={goBack} className="button">
+        Go back
+      </button>
+      <div className="content-container">
+        {id && <h2>Here you can edit Pokemon with id {id}</h2>}
+        <div className="content-bg"></div>
       </div>
-      <div>{id && <h2>Here you can edit Pokemon with id {id}</h2>}</div>
     </>
   );
 };

@@ -40,25 +40,31 @@ function SearchPage() {
     <>
       <h1>Search page</h1>
       <SearchForm onSubmit={onChangeQuery} />
-      <ul>
+
+      <div className="content-container">
         {!isEmpty && (
-          <>
-            <img
-              src={pokemon.sprites.other['official-artwork'].front_default}
-              width="240"
-              alt={pokemon.name}
-            />
-            <h2>{pokemon.name}</h2>
-            <ul>
-              {pokemon.stats.map(entry => (
-                <li key={entry.stat.name}>
-                  {entry.stat.name}: {entry.base_stat}
-                </li>
-              ))}
-            </ul>
-          </>
+          <div className="search-result">
+            <div>
+              <img
+                src={pokemon.sprites.other['official-artwork'].front_default}
+                width="240"
+                alt={pokemon.name}
+              />
+            </div>
+            <div>
+              <h2>{pokemon.name}</h2>
+              <ul>
+                {pokemon.stats.map(entry => (
+                  <li key={entry.stat.name}>
+                    {entry.stat.name}: {entry.base_stat}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         )}
-      </ul>
+        <div className="content-bg"></div>
+      </div>
     </>
   );
 }

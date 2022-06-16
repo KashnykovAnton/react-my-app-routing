@@ -23,31 +23,48 @@ const SinglePage = () => {
   return (
     <div>
       <div className="buttons-block">
-        <button onClick={goBack}>Go back</button>
-        <button onClick={goBackTwoSteps}>Go back Two Steps</button>
+        <button onClick={goBack} className="button">
+          Go back
+        </button>
+        <button onClick={goBackTwoSteps} className="button">
+          Go back Two Steps
+        </button>
         {/* Not Recommended! Bad approach. Better to use Link for simple go to home */}
-        <button onClick={goHome}>Go Home</button>
-        <button onClick={goBackWithState}>Go Back With State</button>
+        <button onClick={goHome} className="button">
+          Go Home
+        </button>
+        <button onClick={goBackWithState} className="button">
+          Go Back With State
+        </button>
       </div>
 
-      {pokemon && (
-        <>
-          <img
-            src={sprites.other['official-artwork'].front_default}
-            width="240"
-            alt={name}
-          />
-          <h2>{pokemon.name}</h2>
-          <ul>
-            {stats.map(entry => (
-              <li key={entry.stat.name}>
-                {entry.stat.name}: {entry.base_stat}
-              </li>
-            ))}
-          </ul>
-          <Link to={`/posts/${id}/edit`}>Edit Pokemon</Link>
-        </>
-      )}
+      <div className="content-container">
+        {pokemon && (
+          <div className="search-result">
+            <div>
+              <img
+                src={sprites.other['official-artwork'].front_default}
+                width="240"
+                alt={name}
+              />
+            </div>
+            <div>
+              <h2>{pokemon.name}</h2>
+              <ul>
+                {stats.map(entry => (
+                  <li key={entry.stat.name}>
+                    {entry.stat.name}: {entry.base_stat}
+                  </li>
+                ))}
+              </ul>
+              <div className="links-block link-edit">
+                <Link to={`/posts/${id}/edit`}>Edit Pokemon</Link>
+              </div>
+            </div>
+          </div>
+        )}
+        <div className="content-bg"></div>
+      </div>
     </div>
   );
 };

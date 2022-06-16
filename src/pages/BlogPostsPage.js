@@ -9,7 +9,7 @@ function BlogPostsPage() {
   const postQuery = searchParams.get('post') || '';
   const latest = searchParams.has('latest');
 
-  const startsFrom = latest ? 80 : 1;
+  const startsFrom = latest ? 90 : 1;
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/posts/')
@@ -25,30 +25,32 @@ function BlogPostsPage() {
         latest={latest}
         setSearchParams={setSearchParams}
       />
-      <ul>
-        {posts &&
-          posts
-            .filter(
-              post => post.title.includes(postQuery) && post.id >= startsFrom,
-            )
-            .map((post, index) => {
-              if (index >= 20) {
-                // eslint-disable-next-line array-callback-return
-                return;
-              }
-              return (
-                <Link key={post.id} to={`/blog-posts/${post.id}`}>
-                  <li>
-                    <span style={{ marginRight: '15px' }}>№ {post.id}</span>
-                    <span>{post.title}</span>
-                  </li>
-                </Link>
-              );
-            })}
-      </ul>
-      <Link to="/posts/new" style={{ color: 'darkgreen' }}>
-        Create New Post
-      </Link>
+      <div className="content-container posts-container">
+        <ul className="posts-list">
+          {posts &&
+            posts
+              .filter(
+                post => post.title.includes(postQuery) && post.id >= startsFrom,
+              )
+              .map((post, index) => {
+                if (index >= 10) {
+                  // eslint-disable-next-line array-callback-return
+                  return;
+                }
+                return (
+                  <Link key={post.id} to={`/blog-posts/${post.id}`}>
+                    <li>
+                      <span style={{ marginRight: '15px' }}>№ {post.id}</span>
+                      <span>{post.title}</span>
+                    </li>
+                  </Link>
+                );
+              })}
+        </ul>
+      </div>
+      <div className="links-block">
+        <Link to="/posts/new">Create New Post</Link>
+      </div>
     </>
   );
 }

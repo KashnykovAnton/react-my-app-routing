@@ -5,7 +5,22 @@ function AboutPage() {
   return (
     <>
       <h1>About page</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, et?</p>
+      <div className="content-container">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque illo
+          ullam perferendis aliquid ipsum dolorem, aliquam itaque doloribus aut
+          repellendus reprehenderit sint a nihil doloremque molestiae rem facere
+          rerum autem. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Atque illo ullam perferendis aliquid ipsum dolorem, aliquam itaque
+          doloribus aut repellendus reprehenderit sint a nihil doloremque
+          molestiae rem facere rerum autem. Lorem ipsum dolor sit amet,
+          consectetur adipisicing elit. Atque illo ullam perferendis aliquid
+          ipsum dolorem, aliquam itaque doloribus aut repellendus reprehenderit
+          sint a nihil doloremque molestiae rem facere rerum autem.
+        </p>
+        <div className="content-bg"></div>
+      </div>
+
       <div className="links-block">
         <Link to="contacts">Contacts</Link>
         <Link to="team">Team</Link>

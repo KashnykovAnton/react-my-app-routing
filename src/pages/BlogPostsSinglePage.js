@@ -16,15 +16,16 @@ const BlogPostsSinglePage = () => {
 
   return (
     <>
-      <div className="buttons-block">
-        <button type="button" onClick={goBack}>
+      <div>
+        <button type="button" onClick={goBack} className="button">
           Go back
         </button>
       </div>
-      <div className="post-article">
+      <div className="content-container">
         <h2>{post.title}</h2>
         <p>Post number: {post.id}</p>
         <p>{post.body}</p>
+        <div className="content-bg"></div>
       </div>
     </>
   );
