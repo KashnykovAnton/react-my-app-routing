@@ -300,7 +300,7 @@ h1 {
 
 .posts-item {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   margin-bottom: 10px;
 }
 
