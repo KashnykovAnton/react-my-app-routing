@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/react-my-app-routing/static/css/main.99a85297.css",
+    "main.js": "/react-my-app-routing/static/js/main.a879d6bd.js",
+    "static/media/white-painted-wall-texture-background.jpg": "/react-my-app-routing/static/media/white-painted-wall-texture-background.7b420d3f2bccb09a2951.jpg",
+    "static/media/Fenix-Regular.ttf": "/react-my-app-routing/static/media/Fenix-Regular.3894960db87ba30f7b45.ttf",
+    "static/media/YoungSerif-Regular.woff": "/react-my-app-routing/static/media/YoungSerif-Regular.5b48d281ca99b4265522.woff",
+    "static/media/YoungSerif-Regular.woff2": "/react-my-app-routing/static/media/YoungSerif-Regular.25ee6e5ec3385115fe42.woff2",
+    "index.html": "/react-my-app-routing/index.html",
+    "main.99a85297.css.map": "/react-my-app-routing/static/css/main.99a85297.css.map",
+    "main.a879d6bd.js.map": "/react-my-app-routing/static/js/main.a879d6bd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.99a85297.css",
+    "static/js/main.a879d6bd.js"
+  ]
+}
