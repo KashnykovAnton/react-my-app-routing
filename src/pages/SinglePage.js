@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Link, useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+import ItemPage from './ItemPage';
 
 const SinglePage = () => {
   const { id } = useParams();
@@ -17,8 +18,6 @@ const SinglePage = () => {
       .then(r => r.json())
       .then(data => setPokemon(data));
   }, [id]);
-
-  const { sprites, name, stats } = pokemon;
 
   return (
     <div>
@@ -39,31 +38,7 @@ const SinglePage = () => {
       </div>
 
       <div className="content-container">
-        {pokemon && (
-          <div className="search-result">
-            <div>
-              <img
-                src={sprites.other['official-artwork'].front_default}
-                width="240"
-                alt={name}
-              />
-            </div>
-            <div>
-              <h2>{pokemon.name}</h2>
-              <ul>
-                {stats.map(entry => (
-                  <li key={entry.stat.name}>
-                    {entry.stat.name}: {entry.base_stat}
-                  </li>
-                ))}
-              </ul>
-              <div className="links-block link-edit">
-                <Link to={`/posts/${id}/edit`}>Edit Pokemon</Link>
-              </div>
-            </div>
-          </div>
-        )}
-        <div className="content-bg"></div>
+        {pokemon && <ItemPage item={pokemon} />}
       </div>
     </div>
   );

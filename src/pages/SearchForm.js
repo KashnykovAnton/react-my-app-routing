@@ -8,6 +8,7 @@ const SearchForm = ({ onSubmit }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // console.log('navigate ', navigate);
   // console.log('location in search ', location);
 
   const goBackToPosts = () => navigate('/posts', { replace: true });

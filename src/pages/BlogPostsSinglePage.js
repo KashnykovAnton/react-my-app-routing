@@ -25,7 +25,6 @@ const BlogPostsSinglePage = () => {
         <h2>{post.title}</h2>
         <p>Post number: {post.id}</p>
         <p>{post.body}</p>
-        <div className="content-bg"></div>
       </div>
     </>
   );

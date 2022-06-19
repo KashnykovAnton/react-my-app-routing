@@ -1,7 +1,11 @@
 // import { Route, Routes, Link } from 'react-router-dom';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet, Link, useLocation } from 'react-router-dom';
 
 function AboutPage() {
+  const { pathname } = useLocation();
+
+  console.log(pathname);
+
   return (
     <>
       <h1>About page</h1>
@@ -18,7 +22,6 @@ function AboutPage() {
           ipsum dolorem, aliquam itaque doloribus aut repellendus reprehenderit
           sint a nihil doloremque molestiae rem facere rerum autem.
         </p>
-        <div className="content-bg"></div>
       </div>
 
       <div className="links-block">

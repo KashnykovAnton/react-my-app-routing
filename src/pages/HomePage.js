@@ -15,7 +15,6 @@ function HomePage() {
           ipsum dolorem, aliquam itaque doloribus aut repellendus reprehenderit
           sint a nihil doloremque molestiae rem facere rerum autem.
         </p>
-        <div className="content-bg"></div>
       </div>
     </>
   );

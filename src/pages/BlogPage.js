@@ -39,7 +39,6 @@ function BlogPage() {
               );
             })}
         </ul>
-        <div className="content-bg"></div>
       </dir>
       <div className="links-block">
         <Link to="/posts/new">Create New Post</Link>

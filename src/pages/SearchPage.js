@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import SearchForm from './SearchForm';
+import ItemPage from './ItemPage';
 
 function SearchPage() {
   const [pokemon, setPokemon] = useState({});
   const [query, setQuery] = useState('');
   const locationState = useLocation();
-  // console.log(locationState.search);
-  // console.log(query);
+  console.log(locationState);
+  console.log(query);
   // console.log(pokemon);
 
   useEffect(() => {
@@ -42,28 +43,7 @@ function SearchPage() {
       <SearchForm onSubmit={onChangeQuery} />
 
       <div className="content-container">
-        {!isEmpty && (
-          <div className="search-result">
-            <div>
-              <img
-                src={pokemon.sprites.other['official-artwork'].front_default}
-                width="240"
-                alt={pokemon.name}
-              />
-            </div>
-            <div>
-              <h2>{pokemon.name}</h2>
-              <ul>
-                {pokemon.stats.map(entry => (
-                  <li key={entry.stat.name}>
-                    {entry.stat.name}: {entry.base_stat}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        )}
-        <div className="content-bg"></div>
+        {!isEmpty && <ItemPage item={pokemon} />}
       </div>
     </>
   );
