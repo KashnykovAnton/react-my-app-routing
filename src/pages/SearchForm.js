@@ -13,6 +13,8 @@ const SearchForm = ({ onSubmit }) => {
 
   const goBackToPosts = () => navigate('/posts', { replace: true });
   const goBackWithState = () => navigate('/posts', { state: location.search });
+  const goBackWithLocation = () =>
+    navigate('/posts', { state: { from: location } });
 
   useEffect(() => {
     if (!searchQuery) {
@@ -49,6 +51,9 @@ const SearchForm = ({ onSubmit }) => {
         </button>
         <button onClick={goBackWithState} className="button">
           Go Back With State
+        </button>
+        <button onClick={goBackWithLocation} className="button">
+          Go Back With Location
         </button>
       </div>
 

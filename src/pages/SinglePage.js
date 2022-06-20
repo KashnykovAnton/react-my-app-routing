@@ -1,12 +1,24 @@
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import {
+  // useParams,
+  useNavigate,
+  useLocation,
+} from 'react-router-dom';
 import ItemPage from './ItemPage';
 
 const SinglePage = () => {
-  const { id } = useParams();
   const navigate = useNavigate();
   const [pokemon, setPokemon] = useState('');
-  // console.log(pokemon);
+
+  // Use slug - first solve with useLocation
+  const { state } = useLocation();
+  const { id } = state;
+
+  // Use slug - second solve with regular expression
+  // When we use Slugify - for finding id - need to use regular expression
+  // const {id} = useParams();
+  // console.log(id.match(/[a-z0-9]+$/)[0]);
+  // const pokemonId = id.match(/[a-z0-9]+$/)[0]
 
   const goBack = () => navigate(-1);
   const goBackTwoSteps = () => navigate(-2);

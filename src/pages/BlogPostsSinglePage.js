@@ -6,7 +6,12 @@ const BlogPostsSinglePage = () => {
   const [post, setPost] = useState({});
   const navigate = useNavigate();
 
-  const goBack = () => navigate(-1);
+  // It's not recommended to use navigate with delta/numbers
+  // Example with start-page Google and paste adress in adress-stroke
+  // const goBack = () => navigate(-1);
+
+  // Pattern - to use!!!
+  const goBack = () => navigate('/blog-posts', { replace: true });
 
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
