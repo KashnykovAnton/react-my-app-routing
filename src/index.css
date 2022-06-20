@@ -59,7 +59,7 @@ ul {
   background-image: url('./assets/images/white-painted-wall-texture-background.jpg');
   /* background-color: var(--first-color); */
   background-size: contain;
-  background-repeat: repeat-y;
+  background-repeat: repeat;
 }
 
 header {
