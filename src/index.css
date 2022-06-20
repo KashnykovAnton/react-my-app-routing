@@ -16,6 +16,8 @@ ul {
   list-style: none;
 }
 
+
+
 @font-face {
   font-family: 'YoungSerif';
   src: url('./assets/fonts/YoungSerif-Regular.woff2') format('woff2'),
@@ -32,6 +34,7 @@ ul {
 }
 
 :root {
+
   --first-color: #F7F7F7;
   --list-item-bg-color: #C9C9C9;
   --text-bg-color: #D8D8D8;
