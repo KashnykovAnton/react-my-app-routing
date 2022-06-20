@@ -40,10 +40,8 @@ function BlogPostsPage() {
                 return (
                   <Link key={post.id} to={`/blog-posts/${post.id}`}>
                     <li className="posts-item">
-                      <span style={{ marginRight: '15px', width: '10%' }}>
-                        № {post.id}
-                      </span>
-                      <span>{post.title}</span>
+                      <span className="post-id">№ {post.id}</span>
+                      <span className="post-text">{post.title}</span>
                     </li>
                   </Link>
                 );

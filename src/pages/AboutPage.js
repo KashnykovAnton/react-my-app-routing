@@ -10,7 +10,7 @@ function AboutPage() {
     <>
       <h1>About page</h1>
       <div className="content-container">
-        <p>
+        <p className="text">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque illo
           ullam perferendis aliquid ipsum dolorem, aliquam itaque doloribus aut
           repellendus reprehenderit sint a nihil doloremque molestiae rem facere

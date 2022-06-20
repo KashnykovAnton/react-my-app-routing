@@ -33,7 +33,7 @@ function BlogPage() {
                   to={`/posts/${id}`}
                   className={'list-link'}
                 >
-                  <li>{post.name}</li>
+                  <li className="list-name">{post.name}</li>
                   <span class="flare"></span>
                 </Link>
               );
